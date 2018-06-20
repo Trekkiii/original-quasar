@@ -8,9 +8,9 @@
   export default {
     name: 'Particle',
     mounted () {
-      let maxParticles = 100
+      let maxParticles = 50
       let particles = []
-      let frequency = 500
+      let frequency = 1000
       let initNum = maxParticles
       let maxTime = frequency * maxParticles
       let timeToRecreate = false
@@ -33,7 +33,8 @@
 
       class Particle {
         constructor (canvas, options) {
-          let colors = ['#feea00', '#a9df85', '#5dc0ad', '#ff9a00', '#fa3f20']
+//          let colors = ['#feea00', '#a9df85', '#5dc0ad', '#ff9a00', '#fa3f20']
+          let colors = ['#0798ec', '#1bcee6', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#ba5be9']
           let types = ['full', 'fill', 'empty']
           this.random = Math.random()
           this.canvas = canvas
@@ -43,7 +44,7 @@
           this.y = (particle.height() / 2) + (Math.random() * 200 - Math.random() * 200)
           this.w = particle.width()
           this.h = particle.height()
-          this.radius = 1 + (8 * this.random)
+          this.radius = 3 + (8 * this.random) // 控制小球的大小
           this.type = types[this.randomIntFromInterval(0, types.length - 1)]
           this.color = colors[this.randomIntFromInterval(0, colors.length - 1)]
           this.a = 0
@@ -137,7 +138,7 @@
 
       function clear () {
         // canvas.globalAlpha=0.04;
-        canvas.fillStyle = '#ffffff'
+        canvas.fillStyle = '#41B883'
         canvas.fillRect(0, 0, tela.width, tela.height)
         // canvas.globalAlpha=1;
       }
@@ -152,7 +153,7 @@
             canvas.moveTo(box1.x, box1.y)
             canvas.lineTo(box2.x, box2.y)
             canvas.lineWidth = 0.45
-            canvas.strokeStyle = '#3f47ff'
+            canvas.strokeStyle = '#ffb3d2'
             canvas.stroke()
             canvas.closePath()
           }
@@ -207,9 +208,8 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 607px;
   }
 
   .title {

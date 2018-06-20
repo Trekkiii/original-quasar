@@ -1,10 +1,10 @@
 export default [
   {
     path: '/',
-    component: () => import('layouts/default'),
-    children: [
-      { path: '', component: () => import('pages/canvas/particle') }
-    ]
+    component: () => import('layouts/default')
+    // children: [
+    //   { path: '', component: () => import('pages/canvas/particle') }
+    // ]
   },
 
   { // Always leave this as last one
