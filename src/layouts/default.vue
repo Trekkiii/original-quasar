@@ -35,14 +35,14 @@
 </template>
 
 <script>
-  import FullPage from './../../node_modules/vue-fullpage.js/src/FullPage';
-  import fullPageMixin from './../../node_modules/vue-fullpage.js/src/fullPageMixin';
+  import FullPage from 'src/components/vue-fullpage.js/fullpage';
+  import FullPageMixin from 'src/components/vue-fullpage.js/fullpage_mixin';
   import Particle from 'src/components/canvas/particle';
   import Welcome from 'src/pages/welcome';
-  import CopyrCert from 'src/pages/copyrcert';
-  import FileCheck from 'src/pages/filecheck';
+  import CopyrCert from 'src/pages/copyr_cert';
+  import FileCheck from 'src/pages/file_check';
   export default {
-    mixins: [fullPageMixin],
+    mixins: [FullPageMixin],
     components: {
       FullPage,
       Particle,

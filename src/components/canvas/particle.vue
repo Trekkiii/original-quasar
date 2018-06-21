@@ -7,7 +7,7 @@
 <script>
   export default {
     name: 'Particle',
-    mounted () {
+    mounted() {
       let maxParticles = 50
       let particles = []
       let frequency = 1000
@@ -32,7 +32,7 @@
       let canvas = tela.getContext('2d')
 
       class Particle {
-        constructor (canvas, options) {
+        constructor(canvas, options) {
 //          let colors = ['#feea00', '#a9df85', '#5dc0ad', '#ff9a00', '#fa3f20']
           let colors = ['#0798ec', '#1bcee6', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#ba5be9']
           let types = ['full', 'fill', 'empty']
@@ -51,18 +51,18 @@
           this.s = (this.radius + (Math.random() * 1)) / 10
         }
 
-        getCoordinates () {
+        getCoordinates() {
           return {
             x: this.x,
             y: this.y
           }
         }
 
-        randomIntFromInterval (min, max) {
+        randomIntFromInterval(min, max) {
           return Math.floor(Math.random() * (max - min + 1) + min)
         }
 
-        render () {
+        render() {
           // Create arc
           let lineWidth = 0.2 + (2.8 * this.random)
           let color = this.color
@@ -80,7 +80,7 @@
           }
         }
 
-        createArcFill (radius, color) {
+        createArcFill(radius, color) {
           this.canvas.beginPath()
           this.canvas.arc(this.x, this.y, radius, 0, 2 * Math.PI)
           this.canvas.fillStyle = color
@@ -88,7 +88,7 @@
           this.canvas.closePath()
         }
 
-        createArcEmpty (radius, lineWidth, color) {
+        createArcEmpty(radius, lineWidth, color) {
           this.canvas.beginPath()
           this.canvas.arc(this.x, this.y, radius, 0, 2 * Math.PI)
           this.canvas.lineWidth = lineWidth
@@ -97,7 +97,7 @@
           this.canvas.closePath()
         }
 
-        move () {
+        move() {
           this.x += Math.cos(this.a) * this.s
           this.y += Math.sin(this.a) * this.s
           this.a += Math.random() * 0.4 - 0.2
@@ -113,7 +113,7 @@
           return true
         }
 
-        calculateDistance (v1, v2) {
+        calculateDistance(v1, v2) {
           let x = Math.abs(v1.x - v2.x)
           let y = Math.abs(v1.y - v2.y)
           return Math.sqrt((x * x) + (y * y))
@@ -124,7 +124,7 @@
        * Function to clear layer canvas
        * @num:number number of particles
        */
-      function popolate (num) {
+      function popolate(num) {
         for (let i = 0; i < num; i++) {
           setTimeout(
             (x => function () {
@@ -136,14 +136,14 @@
         return particles.length
       }
 
-      function clear () {
+      function clear() {
         // canvas.globalAlpha=0.04;
         canvas.fillStyle = '#41B883'
         canvas.fillRect(0, 0, tela.width, tela.height)
         // canvas.globalAlpha=1;
       }
 
-      function connection () {
+      function connection() {
         let oldElement = null
         particles.forEach(function (element, i) {
           if (i > 0) {
@@ -164,13 +164,17 @@
       /*
        * Function to update particles in canvas
        */
-      function update () {
+      function update() {
         clear()
         connection()
-        particles = particles.filter(function (p) { return p.move() })
+        particles = particles.filter(function (p) {
+          return p.move()
+        })
         // Recreate particles
         if (timeToRecreate) {
-          if (particles.length < initNum) { popolate(1) }
+          if (particles.length < initNum) {
+            popolate(1)
+          }
         }
         requestAnimationFrame(update.bind(this))
       }
@@ -182,6 +186,7 @@
 
 <style scoped>
   @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+
   .more-pens {
     position: fixed;
     left: 20px;
@@ -199,6 +204,7 @@
     padding: 4px 8px;
     color: #f7f7f7;
   }
+
   a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white-mode:active:hover {
     background: #edf3f8;
     color: #212121;
@@ -222,6 +228,7 @@
     text-align: center;
     width: 100%;
   }
+
   .title h1 {
     position: relative;
     color: #EEEEEE;
@@ -232,12 +239,14 @@
     line-height: 1;
     text-shadow: 0 0 30px #000155;
   }
+
   .title h1 span {
     font-weight: 600;
     padding: 0;
     margin: 0;
     color: #BBB;
   }
+
   .title h3 {
     font-weight: 200;
     font-size: 20px;
