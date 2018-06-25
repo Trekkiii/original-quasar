@@ -89,3 +89,7 @@
     },
   };
 </script>
+
+<style>
+  @import "fullpage.css";
+</style>

@@ -17,7 +17,7 @@
       <full-page :options="options" @after-load="afterLoad" id="fullpage">
         <div class="section">
           <particle>
-            <welcome></welcome>
+            <index></index>
           </particle>
         </div>
         <div class="section">
@@ -28,7 +28,7 @@
         </div>
       </full-page>
       <div class="footer">
-        TODO
+
       </div>
     </div>
   </div>
@@ -37,16 +37,16 @@
 <script>
   import FullPage from 'src/components/vue-fullpage.js/fullpage';
   import FullPageMixin from 'src/components/vue-fullpage.js/fullpage_mixin';
-  import Particle from 'src/components/canvas/particle';
-  import Welcome from 'src/pages/welcome';
-  import CopyrCert from 'src/pages/copyr_cert';
-  import FileCheck from 'src/pages/file_check';
+  import Particle from 'src/components/canvas/Particle';
+  import Index from 'src/pages/index';
+  import CopyrCert from 'src/pages/CopyrCert';
+  import FileCheck from 'src/pages/FileCheck';
   export default {
     mixins: [FullPageMixin],
     components: {
       FullPage,
       Particle,
-      Welcome,
+      Index,
       CopyrCert,
       FileCheck
     },
@@ -58,7 +58,7 @@
           menu: '#menu',
           navigation: true,
           anchors: ['page1', 'page2', 'page3'],
-          sectionsColor: ['#41b883', '#0798ec', '#1bcee6', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
+          sectionsColor: ['#41b883', '#1bcee6', '#0798ec', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
         },
       }
     },

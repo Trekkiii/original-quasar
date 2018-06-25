@@ -1,12 +1,11 @@
 <template>
-  <div class="container welcome">
+  <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-7">
         <h2>版权认证</h2>
-        <h3>请拖入上次上传的文件，刚刚写入的文件需等待约10分钟后才可验证
+        <h3>请拖入上次上传的文件，刚刚写入的文件需等待几分钟后才可验证
           请您将原件妥善保存，验证时将要求再次写入文件</h3>
         <file-uploader></file-uploader>
-        <!--
         <div class="wrap">
           <div class="btns">
             <div class="container">
@@ -18,16 +17,15 @@
             </div>
           </div>
         </div>
-        -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import FileUploader from 'src/components/fileuploader/fileuploader'
+  import FileUploader from 'src/components/fileuploader/FileUploaderForCheck'
   export default {
-    name: 'CopyrCert',
+    name: 'FileCheck',
     components: {
       FileUploader
     }
@@ -81,18 +79,5 @@
     letter-spacing: 2px;
     text-shadow: 0 0 30px #0798ec;
     text-align: center;
-  }
-
-  .btns {
-    margin-top: 50px;
-    align-items: center;
-  }
-
-  .btn-copyr-cert {
-    margin-right: 15px;
-  }
-
-  .btn-file-check {
-    margin-left: 15px;
   }
 </style>

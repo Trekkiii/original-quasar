@@ -11,4 +11,5 @@
 </script>
 
 <style>
+  @import "assets/libs/iconfont/iconfont.css";
 </style>

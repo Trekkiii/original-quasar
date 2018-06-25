@@ -5,7 +5,8 @@ module.exports = function (ctx) {
     // app plugins (/src/plugins)
     plugins: [
       'axios',
-      'jquery'
+      'jquery',
+      'vue-notifications'
     ],
     css: [
       'app.styl'
@@ -37,7 +38,17 @@ module.exports = function (ctx) {
     devServer: {
       // https: true,
       // port: 8080,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        // proxy all requests starting with /api to jsonplaceholder
+        '/api': {
+          target: 'http://120.92.117.111:8081',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': '/bc'
+          }
+        }
+      }
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
