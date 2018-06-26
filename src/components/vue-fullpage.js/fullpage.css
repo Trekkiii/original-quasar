@@ -164,7 +164,7 @@ h3 {
   display:block;
   color:#fff
 }
-.twitter-share i {
+.github i {
   vertical-align:middle;
   position:relative;
   top:2px;
@@ -176,7 +176,7 @@ h3 {
   left:-2px;
   fill:#fff
 }
-.twitter-share svg {
+.github svg {
   height:40px;
   margin-top:-10px
 }

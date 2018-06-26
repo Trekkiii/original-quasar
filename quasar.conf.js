@@ -6,7 +6,8 @@ module.exports = function (ctx) {
     plugins: [
       'axios',
       'jquery',
-      'vue-notifications'
+      'vue-notifications',
+      'libs'
     ],
     css: [
       'app.styl'

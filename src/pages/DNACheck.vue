@@ -2,11 +2,22 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-7">
-        <h2>版权认证</h2>
-        <h3>文件写入需要约10秒的时间，文件并不会被平台存储，仅用于计算验证其未被做任何更改
-          请您将原件妥善保存，验证时将要求再次写入文件</h3>
-        <cert-file-uploader v-if="!forDetails" @forDetailsEvent="forDetailsHandler"></cert-file-uploader>
-        <div v-if="forDetails" class="evidence">
+        <h2>DNA验证</h2>
+        <div class="imges">
+          <img src="../statics/dna-check.png">
+        </div>
+        <div v-if="!isDNACheckSucc">
+          <div class="dna">
+            <input ref="dna" type="text" name="dna" placeholder="请输入认证的DNA" />
+          </div>
+          <div class="btns">
+            <input type="button" class="btn btn-outline-primary" value="查看详情" v-if="isDNACheckSucc"
+                   @click="detailHandler">
+            <input type="button" class="btn btn-outline-warning" value="DNA验证" v-if="!isDNACheckSucc"
+                   @click="dnaCheckHandler"/>
+          </div>
+        </div>
+        <div v-if="isDNACheckSucc" class="evidence">
           <div class="container">
             <div class="row justify-content-md-center">
               <div class="col-md-12">
@@ -80,23 +91,48 @@
 </template>
 
 <script>
-  import CertFileUploader from 'src/components/fileuploader/CertFileUploader'
-
   export default {
-    name: 'CopyrCert',
+    name: 'DNACheck',
     components: {
-      CertFileUploader
     },
     data () {
       return {
-        'forDetails': false,
+        isDNACheckSucc: false,
         'detailInfo': {}
       }
     },
     methods: {
-      forDetailsHandler (e) {
-        this.forDetails = e.forDetails
-        this.detailInfo = e.detailInfo
+      detailHandler () {
+
+      },
+      dnaCheckHandler () {
+        let dna = this.$refs.dna;
+        let value = dna.value
+
+        // axios发送请求之前先禁用提交按钮，防止重复提交
+        dna.setAttribute('disabled', 'disabled')
+        let _this = this
+        this.$axios.get("/api/h/check?DNA=" + value).then((res) => {
+          if (res.data.status === 0) {
+            _this.detailInfo = res.data.data // 响应结果
+            this.isDNACheckSucc = true
+            dna.removeAttribute('disabled')
+          } else {
+            let tip = (res.data.status === 6) ? "DNA不存在！" : "校验失败，请重试！"
+            _this.showLoginError({title: '', message: tip, type: 'error', timeout: 3000})
+            dna.removeAttribute('disabled')
+          }
+        }).catch(function (error) {
+          dna.removeAttribute('disabled')
+          _this.showLoginError({title: '', message: 'DNA校验失败！', type: 'error', timeout: 3000})
+        })
+      }
+    },
+    notifications: {
+      showLoginError: { // You can have any name you want instead of 'showLoginError'
+        title: '',
+        message: '',
+        type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
       }
     }
   }
@@ -173,5 +209,30 @@
     letter-spacing: 2px;
     text-shadow: 0 0 30px #0798ec;
     text-align: center;
+  }
+
+  .imges {
+    text-align: center;
+  }
+
+  .btns {
+    text-align: center;
+  }
+
+  .dna {
+    padding: 15px 30px;
+  }
+
+  .dna input {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: inherit;
+    background-clip: padding-box;
+    border: 1px solid #ffffff;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 </style>
