@@ -11,17 +11,25 @@
             <input ref="dna" type="text" name="dna" placeholder="请输入认证的DNA" />
           </div>
           <div class="btns">
-            <input type="button" class="btn btn-outline-primary" value="查看详情" v-if="isDNACheckSucc"
-                   @click="detailHandler">
             <input type="button" class="btn btn-outline-warning" value="DNA验证" v-if="!isDNACheckSucc"
                    @click="dnaCheckHandler"/>
           </div>
         </div>
         <div v-if="isDNACheckSucc" class="evidence">
           <div class="container">
+            <div class="row justify-content-md-center details-header">
+              <div class="col align-self-start title">
+                认证详情
+              </div>
+              <div class="col align-self-end goback">
+                <svg class="icon icon-goback" aria-hidden="true" @click="gobackHandler">
+                  <use xlink:href="#icon-goback"></use>
+                </svg>
+              </div>
+            </div>
             <div class="row justify-content-md-center">
               <div class="col-md-12">
-                <div class="base-info">
+                <div class="details-bs-info">
                   <div class="container">
                     <div class="row">
                       <div class="col-md-3 name">
@@ -58,24 +66,30 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row justify-content-md-center">
               <div class="col-md-12">
-                <div class="single-info">
+                <div class="details-sg-info">
                   <div class="name">完整DNA</div>
                   <div class="value">
                     {{detailInfo.dna}}
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row justify-content-md-center">
               <div class="col-md-12">
-                <div class="single-info">
+                <div class="details-sg-info">
                   <div class="name">事务ID</div>
                   <div class="value">
                     {{detailInfo.txId}}
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row justify-content-md-center">
               <div class="col-md-12">
-                <div class="single-info">
+                <div class="details-sg-info">
                   <div class="name">签名</div>
                   <div class="value">
                     {{detailInfo.signature}}
@@ -102,8 +116,8 @@
       }
     },
     methods: {
-      detailHandler () {
-
+      gobackHandler () {
+        this.isDNACheckSucc = false
       },
       dnaCheckHandler () {
         let dna = this.$refs.dna;
@@ -152,7 +166,7 @@
     background: #ffffff;
   }
 
-  .base-info {
+  .details-bs-info {
     margin: 10px auto;
     display: block;
     padding: 5px 5px;
@@ -160,11 +174,11 @@
     background-color: #f6f8f8
   }
 
-  .base-info .name {
+  .details-bs-info .name {
     color: #666;
   }
 
-  .single-info .value {
+  .details-sg-info .value {
     margin: 10px auto;
     display: block;
     padding: 5px 15px;
@@ -172,7 +186,26 @@
     background-color: #f6f8f8;
     font-size: 12px;
     color: #666;
-    word-break : break-all;
+    word-break: break-all;
+  }
+
+  .details-header {
+    border-bottom: 1px solid #e8eaea;
+    padding-bottom: 5px;
+    font-size: 18px;
+    color: #222;
+  }
+
+  .details-header .title {
+    text-align: left;
+  }
+
+  .details-header .goback {
+    text-align: right;
+  }
+
+  .details-header .icon-goback {
+    cursor: pointer;
   }
 
   h1 {

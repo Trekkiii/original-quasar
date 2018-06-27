@@ -65,12 +65,12 @@
   }
 
   h3 {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 14px;
     padding: 0;
     margin: 10px;
     line-height: 1;
-    color: #EEEEEE;
+    color: #ffffff;
     letter-spacing: 2px;
     text-shadow: 0 0 30px #41b883;
     text-align: center;
