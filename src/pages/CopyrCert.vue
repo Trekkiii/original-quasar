@@ -2,9 +2,15 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-7">
-        <h2>版权认证</h2>
-        <h3>文件写入需要约10秒的时间，文件并不会被平台存储，仅用于计算验证其未被做任何更改
-          请您将原件妥善保存，验证时将要求再次写入文件</h3>
+        <div class="container header">
+          <div class="row justify-content-md-center">
+            <i class="col col-md-2 left"></i>
+            <h2 class="col col-md-3">版权认证</h2>
+            <i class="col col-md-2 right"></i>
+          </div>
+        </div>
+        <h3>文件写入需要约3秒的时间，文件并不会被平台存储，仅用于计算验证其未被做任何更改
+          请您将DNA妥善保存，验证时将要求再次写入DNA</h3>
         <cert-file-uploader v-if="!forDetails" @forDetailsEvent="forDetailsHandler"></cert-file-uploader>
         <div v-if="forDetails" class="evidence">
           <div class="container">
@@ -134,6 +140,21 @@
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
+    background: #ffffff;
+  }
+
+  .header {
+  }
+
+  .header .left {
+    top: 20px;
+    height: 6px;
+    background: #ffffff;
+  }
+
+  .header .right {
+    top: 20px;
+    height: 6px;
     background: #ffffff;
   }
 

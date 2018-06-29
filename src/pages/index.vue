@@ -1,12 +1,18 @@
 <template>
-  <div class="container welcome">
+  <div class="container index">
     <div class="row justify-content-md-center">
       <div class="col col-md-8">
         <h1>WPS版权认证</h1>
-        <h2>区块链文件存证平台</h2>
+        <div class="container header">
+          <div class="row justify-content-md-center">
+            <i class="col col-md-2 left"></i>
+            <h2 class="col col-md-4">区块链文件存证平台</h2>
+            <i class="col col-md-2 right"></i>
+          </div>
+        </div>
         <h3>安全易操作的突破性互联网技术</h3>
-        <h3>文件存证是一个基于区块链的文件验证平台，文件的持有人和使用人可以通过平台验证文件在双方传输过程中是否被篡改
-          平台并不存储您的文件信息，仅是将您的文件进行计算后用于验证的值存放于公共区块链中</h3>
+        <h3>WPS版权认证支持所有知识产权类型的版权申请,
+          将文件存在自有区块链存证网络文件的持有人和使用人可以通过平台验证文件是否被篡改</h3>
         <div class="btns">
           <div class="container">
             <div class="row justify-content-md-center">
@@ -31,13 +37,28 @@
 </script>
 
 <style scoped>
-  .welcome {
+  .index {
     z-index: 10;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     font-family: "Montserrat";
+  }
+
+  .header {
+  }
+
+  .header .left {
+    top: 20px;
+    height: 6px;
+    background: #ffffff;
+  }
+
+  .header .right {
+    top: 20px;
+    height: 6px;
+    background: #ffffff;
   }
 
   h1 {

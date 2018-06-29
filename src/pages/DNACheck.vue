@@ -2,7 +2,13 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-7">
-        <h2>DNA验证</h2>
+        <div class="container header">
+          <div class="row justify-content-md-center">
+            <i class="col col-md-2 left"></i>
+            <h2 class="col col-md-3">DNA验证</h2>
+            <i class="col col-md-2 right"></i>
+          </div>
+        </div>
         <div class="imges">
           <img src="../statics/dna-check.png">
         </div>
@@ -163,6 +169,21 @@
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
+    background: #ffffff;
+  }
+
+  .header {
+  }
+
+  .header .left {
+    top: 20px;
+    height: 6px;
+    background: #ffffff;
+  }
+
+  .header .right {
+    top: 20px;
+    height: 6px;
     background: #ffffff;
   }
 
