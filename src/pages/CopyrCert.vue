@@ -148,13 +148,13 @@
 
   .header .left {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 
   .header .right {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 

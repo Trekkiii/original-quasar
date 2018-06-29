@@ -9,9 +9,9 @@
         </svg>
       </div>
       <div class="btns">
-        <input type="button" class="btn btn-outline-primary" value="查看详情" v-if="isCopyrCertSucc"
+        <input type="button" class="btn btn-primary" value="查看详情" v-if="isCopyrCertSucc"
                @click="detailsHandler">
-        <input type="submit" class="btn btn-outline-primary" value="提交认证" v-if="!isCopyrCertSucc"/>
+        <input type="submit" class="btn btn-primary" value="提交认证" v-if="!isCopyrCertSucc"/>
       </div>
     </form>
   </div>

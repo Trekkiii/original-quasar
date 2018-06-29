@@ -17,10 +17,10 @@
           <div class="container">
             <div class="row justify-content-md-center">
               <div class="col col-md-2 copyr_cert">
-                <button type="button" class="btn btn-outline-primary" onClick="location.href='#page2'">版权认证</button>
+                <button type="button" class="btn btn-primary" onClick="location.href='#page2'">版权认证</button>
               </div>
               <div class="col col-md-2 file_check">
-                <button type="button" class="btn btn-outline-warning" onClick="location.href='#page3'">文件验证</button>
+                <button type="button" class="btn btn-warning" onClick="location.href='#page3'">文件验证</button>
               </div>
             </div>
           </div>
@@ -51,13 +51,13 @@
 
   .header .left {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 
   .header .right {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 

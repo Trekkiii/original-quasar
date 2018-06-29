@@ -17,7 +17,7 @@
             <input ref="dna" type="text" name="dna" placeholder="请输入认证的DNA" />
           </div>
           <div class="btns">
-            <input type="button" class="btn btn-outline-warning" value="DNA验证" v-if="!isDNACheckSucc"
+            <input type="button" class="btn btn-warning" value="DNA验证" v-if="!isDNACheckSucc"
                    @click="dnaCheckHandler"/>
           </div>
         </div>
@@ -177,13 +177,13 @@
 
   .header .left {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 
   .header .right {
     top: 20px;
-    height: 6px;
+    height: 4px;
     background: #ffffff;
   }
 
