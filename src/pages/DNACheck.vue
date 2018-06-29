@@ -221,8 +221,8 @@
   }
 
   h2 {
-    font-weight: 400;
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 25px;
     padding: 0;
     margin: 10px;
     line-height: 1;

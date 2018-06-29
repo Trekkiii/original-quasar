@@ -192,8 +192,8 @@
   }
 
   h2 {
-    font-weight: 400;
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 25px;
     padding: 0;
     margin: 10px;
     line-height: 1;
@@ -205,10 +205,10 @@
 
   h3 {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0;
     margin: 10px;
-    line-height: 1;
+    line-height: 1.5;
     color: #fff;
     letter-spacing: 2px;
     text-shadow: 0 0 30px #0798ec;

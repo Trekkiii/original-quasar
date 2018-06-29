@@ -2,7 +2,7 @@
   <div class="container welcome">
     <div class="row justify-content-md-center">
       <div class="col col-md-8">
-        <h1>原创</h1>
+        <h1>WPS版权认证</h1>
         <h2>区块链文件存证平台</h2>
         <h3>安全易操作的突破性互联网技术</h3>
         <h3>文件存证是一个基于区块链的文件验证平台，文件的持有人和使用人可以通过平台验证文件在双方传输过程中是否被篡改
@@ -53,8 +53,8 @@
   }
 
   h2 {
-    font-weight: 400;
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 25px;
     padding: 0;
     margin: 10px;
     line-height: 1;
@@ -66,10 +66,10 @@
 
   h3 {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0;
     margin: 10px;
-    line-height: 1;
+    line-height: 1.5;
     color: #ffffff;
     letter-spacing: 2px;
     text-shadow: 0 0 30px #41b883;

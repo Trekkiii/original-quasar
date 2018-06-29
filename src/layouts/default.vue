@@ -5,6 +5,7 @@
         <li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
         <li data-menuanchor="page2"><a href="#page2">版权认证</a></li>
         <li data-menuanchor="page3"><a href="#page3">DNA验证</a></li>
+        <!--
         <li>
           <a href="https://github.com/HuTu92" target="_blank" rel="noopener" class="github">
             <i>
@@ -14,6 +15,7 @@
             </i>
           </a>
         </li>
+        -->
       </ul>
 
       <full-page :options="options" @after-load="afterLoad" id="fullpage">
